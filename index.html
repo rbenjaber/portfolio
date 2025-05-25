@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Accueil</title>
+  <link rel='stylesheet' href='styles.css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-container">
+        <div class="logo"> <a href='index.html'><img src="img/logo-rim-designs.svg" class="project-img"></a></div>
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="burger">☰</label>
+
+        <ul class="nav-links">
+          <li><a href='index.html' class='active'>Accueil</a></li>
+          <li><a href='projects.html'>Projets</a></li>
+          <li><a href='contact.html'>Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main style='padding:150px 40px 0px 40px; text-align:center;'>
+    <h1 style='color:#00ffe7;font-size:60px;'>Bienvenue sur mon portfolio</h1>
+  </main>
+
+  <section class="content-section">
+    <div class="slider-container">
+      <div class="slider-track">
+        <div class="slide">
+          <div class="text-content">
+            <h2>Bonjour je m'apelle Rim</h2>
+            <p>Je suis passionnée par le design depuis maintenant six ans.
+               J'ai obtenu une licence en design, une licence en art numérique, puis un master en métiers du web.
+               Durant ce parcours, j'ai effectué plusieurs stages dans le design graphique et web, suivi deux ans d'alternance en tant que Product Designer, et travaillé cinq ans en freelance en design graphique et UX/UI.
+               Ces expériences m'ont permis de développer une approche créative et centrée sur l'utilisateur.</p>
+          </div>
+          <div class="image-content">
+          
+            <img src="img/picture-of-me.jpg">
+
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="text-content">
+            <h2>De nombreux projets différents...</h2>
+            <p>J'aime le design et c'est ce dont j'ai fait ma vie parce qu' on ne s'ennuie jamais en travaillant.
+              Étant un domaine qui touche à absolument tous les aspects de la vie; les projets sur lesquels j'ai travaillé portent à chaque fois sur différents sujets.</p>
+          </div>
+          <div class="image-content">
+           <img src="img/slide-2.jpg">
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="text-content">
+            <h2>À l'écoute des Détails et des Besoins</h2>
+            <p>Je suis particulièrement attentive aux détails et au rendu pixel perfect, car je crois que chaque élément compte pour créer une expérience visuelle harmonieuse et efficace.
+              J'accompagne mes clients tout au long du projet avec écoute et bienveillance, intégrant leurs idées et attentes pour concevoir des solutions sur mesure qui répondent parfaitement à leurs besoins.
+            </p>
+          </div>
+          <div class="image-content">
+            <img src="img/slide-3.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <button class="prev-btn">‹</button>
+      <button class="next-btn">›</button>
+  </section>
+
+</body>
+
+</html>
+<script>
+  const track = document.querySelector('.slider-track');
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+
+  let currentIndex = 0;
+
+  function updateSliderPosition() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSliderPosition();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSliderPosition();
+  });
+</script>

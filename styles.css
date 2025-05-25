@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #0a0a0a;
+  padding: 20px 0;
+  z-index: 100;
+}
+
+.projects-page {
+  padding: 140px 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-page h1 {
+  font-size: 50px;
+  color: #00ffe7;
+  margin-bottom: 50px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 231, 0.2);
+  margin-bottom: 40px;
+}
+
+.project-card h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.project-card img.project-img {
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.content-section {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content h2 {
+  font-size: 36px;
+  color: #00ffe7;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.image-content {
+  flex: 1;
+  text-align: right;
+}
+
+.image-content img {
+  max-width: 100%;
+  max-height: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  background: #00ffe7;
+  color: #0a0a0a;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00c6b3;
+}
+
+.contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+}
+
+.contact-info a {
+  color: #00ffe7;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  background: #111;
+  padding: 20px 40px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links a.active {
+  color: #00ffe7;
+}
+
+.logo {
+  color: #00ffe7;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.burger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #00ffe7;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #222;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    display: none;
+    gap: 20px;
+    border-radius: 8px;
+  }
+
+  #menu-toggle:checked+.burger+.nav-links {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.slider-container {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 40px;
+  gap: 40px;
+}
+
+
+/* Responsive adjustment */
+@media screen and (max-width: 768px) {
+  .slide {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-content {
+    text-align: center;
+  }
+}
+
+.slider-buttons {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00ffe7;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: -100px;
+}
+
+.next-btn {
+  right: -100px;
+
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: #00c6b3;
+}
+
+/* Mobile adjustment */
+@media screen and (max-width: 768px) {
+
+  .prev-btn,
+  .next-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .prev-btn {
+    left: 0;
+  }
+
+  .next-btn {
+    right: -0;
+  }
+}
